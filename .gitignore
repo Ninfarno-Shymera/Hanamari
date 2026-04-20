@@ -1,16 +1,15 @@
+res/Keys/
 .env
-.env.local
-.env*.local
 
 __pycache__/
 *.py[cod]
 *.pyo
-*.pyd
-.Python
+.venv/
 venv/
 env/
-.venv/
+
+*.blend1
 
 .vscode/
 .idea/
-*.DS_Store
+.DS_Store
