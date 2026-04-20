@@ -12,4 +12,8 @@ env/
 
 .vscode/
 .idea/
+<<<<<<< HEAD
 .DS_Store
+=======
+.DS_Store
+>>>>>>> 8f019baf85d451cfdd22426e3f83cd2fa1e6937e
