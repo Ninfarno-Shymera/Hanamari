@@ -1,0 +1,28 @@
+{
+    "comm": 0.30,
+    "cadence": 60,
+    "thresholds": {
+        "activity": {
+            "low": 30,
+            "high": 70
+        },
+        "positivity": {
+            "negative": 30,
+            "positive": 65
+        }
+    },
+    "multipliers": {
+        "sadness_gain": 0.6,
+        "sadness_decay": 1.2,
+        "trust_gain": 0.7,
+        "trust_decay": 0.8,
+        "comfort_gain": 1.3,
+        "comfort_decay": 0.5
+    },
+    "rates": {
+        "energy_drain": 0.8,
+        "hunger_drain": 0.9,
+        "inactivity_growth": 0.1,
+        "boredom_growth": 0.4
+    }
+}

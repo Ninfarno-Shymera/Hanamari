@@ -1,0 +1,60 @@
+~ GRUPO 1: Rasgos Núcleo
+Mutuamente excluyentes.
+
+Neutral (Neutral): Equilibrada. Reacciones proporcionales y justas.
+
+Emotional (Emocional): Hipersensible. Siente todo al máximo y le cuesta soltar las emociones.
+
+Apathetic (Apatico): Desconectada. Muros altos, es muy difícil que algo la altere o le importe.
+
+~ GRUPO 2: Estilos de Apego
+Mutuamente excluyentes.
+4. Independent (Independiente): Autosuficiente. Puedes ignorarla por horas y estará perfectamente bien.
+5. Dependent (Dependiente): Ansiosa. Si no le haces caso, siente abandono y entra en crisis.
+6. Secure (Seguro): Apego sano. Disfruta tu atención pero sabe esperarte con calma si te vas.
+
+~ GRUPO 3: Rasgos Personales
+Se pueden mezclar para crear la personalidad final.
+
+- Batería y Energía:
+7. Hyperactive [Hiperactivo]: Drenaje de energía acelerado, no se puede quedar quieta.
+8. Serene (Serena): Drenaje de energía lento, movimientos pausados.
+9. Introvert (Introvertido): Socializar la agota. Necesita silencio para recargar batería.
+10. Extrovert (Extrovertida): Socializar la recarga. El silencio prolongado drena su energía.
+11. Lazy (Perezosa): Evita moverse, altísimo costo de energía al hacer animaciones complejas.
+
+- Percepcion:
+12. Curious (Curioso): Busca estímulos nuevos. Se asombra fácil pero se distrae rápido.
+13. Oblivious (Despistada): Ignora los detalles. Casi nula ganancia de sorpresa, vive en las nubes.
+14. Observant (Consciente): Lo nota todo. Cualquier click o movimiento dispara su atención al 100%.
+15. Driven (Obsesiva): Ignora el mundo para cumplir su tarea. Concentración inquebrantable.
+
+- Interpretacion
+16. Silly (Simple): Interpretación literal. Se ríe de todo sin entender el subtexto.
+17. Perceptive (Intuitiva): Lee la intención. Sabe cuándo estás trabajando duro o cuándo estás jugando.
+18. Reflective (Reflexiva): Cero impulsividad. Retraso en su reacción emocional para "pensar" si vale la pena enojarse.
+
+- Contacto Físico y Espacio:
+19. Affectionate (Afectiva): Cariñosa. Busca validación física (arrastres/clicks), se encariña rápido con el tacto.
+20. Distant (Distante): Valora su espacio. El exceso de clicks o arrastre rápido le genera molestia, no confort.
+
+- Comunicación (Cadencia):
+21. Sociable (Social): Locuaz. Inicia conversaciones constantemente, odia el silencio.
+22. Shy (Timida): Tímida y asustadiza. Evita el contacto directo y habla lo mínimo indispensable.
+
+- Actitud hacia el usuario:
+23. Kind (Amable): Amable y paciente. Perdona rapidísimo, la alegría le dura mucho.
+24. Rude (Ruda): Grosera/Tsundere. Impaciente, te exige cosas de mala gana y guarda rencor.
+25. Supportive (Valiente): Maternal. Su objetivo es subir tu positividad, te anima si trabajas mucho.
+26. Mischievous (Traviesa): Busca el caos. Le divierte taparte una ventana o esconderse.
+27. Sullen (Huraña): Se aísla como mecanismo de defensa. Baja comunicación, repele el contacto pacíficamente.
+28. Rebellious (Rebelde): Desobedece por instinto. Hacer lo contrario a lo que se le pide sube su confianza.
+29. Dutiful (Servicial): Obedece por validación. La aprobación pausa su hambre y drena su cansancio.
+
+- Visión del Mundo:
+30. Optimistic (Optimista): Sesgo positivo. Todo lo ve bien, la tristeza le resbala rápido.
+31. Carefree (Despreocupado): Espíritu libre. Coraza absoluta contra el estrés, el enojo o el miedo.
+32. Strict (Estricta): Profesional. Respeta horarios; interrumpirla en su descanso dispara su ira.
+33. Egocentric (Egocentrico): Narcisista. Confianza inquebrantable, se ofende si no es el centro de atención.
+34. Melancholic (Melancólica): Vive en el pasado. Se mueve poco y la tristeza tiene alta ganancia y bajo decaimiento.
+35. Anxious (Paranoica): Pánico al entorno (eventos del sistema, clicks rápidos), no al abandono.

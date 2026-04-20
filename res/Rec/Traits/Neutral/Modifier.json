@@ -1,0 +1,46 @@
+{
+    "comm": 0.50,
+    "cadence": 1.0,
+    "thresholds": {
+        "activity": {
+            "low": 33,
+            "high": 66
+        },
+        "positivity": {
+            "negative": 33,
+            "positive": 66
+        }
+    },
+    "multipliers": {
+        "joy_gain": 1.0,
+        "joy_decay": 1.0,
+        "sadness_gain": 1.0,
+        "sadness_deccay": 1.0,
+        "anger_gain": 1.0,
+        "anger_decay": 1.0,
+        "fear_gain": 1.0,
+        "fear_decay": 1.0,
+        "surprise_gain": 1.0,
+        "surprise_decay": 1.0,
+        "disgust_gain": 1.0,
+        "disgust_decay": 1.0,
+        "trust_gain": 1.0,
+        "trust_decay": 1.0
+    },
+    "rates": {
+        "energy_growth": 1.0,
+        "energy_drain": 1.0,
+        "hunger_growth": 1.0,
+        "hunger_drain": 1.0,
+        "inactivity_growth": 1.0,
+        "inactivity_drain": 1.0,
+        "boredom_growth": 1.0,
+        "boredom_drain": 1.0,
+        "excite_growth": 1.0,
+        "excite_drain": 1.0,
+        "curiosity_growth": 1.0,
+        "curiosity_drain": 1.0,
+        "stress_growth": 1.0,
+        "stress_drain": 1.0
+    }
+}

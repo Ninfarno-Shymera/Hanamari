@@ -1,0 +1,37 @@
+{
+    "comm": 0.70,
+    "cadence": 35,
+    "thresholds": {
+        "activity": {
+            "low": 40,
+            "high": 60
+        },
+        "positivity": {
+            "negative": 40,
+            "positive": 60
+        }
+    },
+    "multipliers": {
+        "joy_gain": 1.4,
+        "joy_decay": 0.6,
+        "sadness_gain": 1.4,
+        "sadness_decay": 0.6,
+        "anger_gain": 1.4,
+        "anger_decay": 0.6,
+        "fear_gain": 1.4,
+        "fear_decay": 0.8,
+        "surprise_gain": 1.5,
+        "disgust_gain": 1.2,
+        "trust_gain": 0.8,
+        "trust_decay": 1.2,
+        "concentration_gain": 1.5,
+        "concentration_decay": 0.5,
+        "comfort_gain": 1.2
+    },
+    "rates": {
+        "energy_drain": 1.2,
+        "hunger_drain": 1.2,
+        "inactivity_growth": 1.0,
+        "boredom_growth": 0.5
+    }
+}

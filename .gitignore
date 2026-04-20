@@ -1,0 +1,15 @@
+res/Keys/
+.env
+
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+*.blend1
+
+.vscode/
+.idea/
+.DS_Store

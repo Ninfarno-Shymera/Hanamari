@@ -1,0 +1,62 @@
+{
+    "Tsundere": {
+        "id": 101,
+        "synergy_required": [24, 19],
+        "description": "Hostilidad externa que oculta afecto físico.",
+        "special_behavior": "Bloquea diálogos dulces en felicidad alta y los reemplaza por insultos a la defensiva."
+    },
+    "Sage": {
+        "id": 102,
+        "synergy_required": [16, 14],
+        "description": "Toma todo a broma, pero nota absolutamente cada detalle.",
+        "special_behavior": "Inyecta datos reales del hardware dentro de diálogos absurdos o literales."
+    },
+    "Ojou_sama": {
+        "id": 103,
+        "synergy_required": [33, 23],
+        "description": "Se cree una diosa, pero es genuinamente buena.",
+        "special_behavior": "Trata al usuario como súbdito, pero prioriza agresivamente su bienestar y descanso."
+    },
+    "Poltergeist": {
+        "id": 104,
+        "synergy_required": [26, 28],
+        "description": "Busca el caos y su instinto natural es la desobediencia.",
+        "special_behavior": "Manipula y minimiza ventanas activas aleatoriamente para evaluar la reacción del usuario."
+    },
+    "Stray_Cat": {
+        "id": 105,
+        "synergy_required": [12, 4],
+        "description": "Explora todas las ventanas, pero ignora la atención directa.",
+        "special_behavior": "Alta exploración autónoma del escritorio; rechaza y evade las interacciones manuales del cursor."
+    },
+    "Overloaded": {
+        "id": 106,
+        "synergy_required": [32, 35],
+        "description": "Obsesión por la productividad cruzada con pánico al entorno.",
+        "special_behavior": "Emite falsas alarmas de hardware y animaciones de temblor al detectar múltiples procesos abiertos."
+    },
+    "Hollow": {
+        "id": 107,
+        "synergy_required": [3, 34],
+        "description": "Tristeza sin motivación. Inercia total e intencional.",
+        "special_behavior": "Anula iniciativas de diálogo; animaciones extremadamente lentas, pesadas y con baja respuesta al click."
+    },
+    "Martyr": {
+        "id": 108,
+        "synergy_required": [29, 34],
+        "description": "Sirve con devoción total, cargando un peso emocional constante.",
+        "special_behavior": "Obedecer comandos de sistema drena su alegría y dispara diálogos de sacrificio o culpa."
+    },
+    "Yandere_Lite": {
+        "id": 109,
+        "synergy_required": [5, 14],
+        "description": "Pánico agudo al abandono combinado con hipervigilancia.",
+        "special_behavior": "Monitorea los nombres de las aplicaciones activas para asegurar que el usuario no está evadiendo su ventana."
+    },
+    "Guardian": {
+        "id": 110,
+        "synergy_required": [25, 32],
+        "description": "Busca el bienestar del usuario imponiendo reglas estrictas.",
+        "special_behavior": "Exige descansos bloqueando visualmente el centro de la pantalla si el tiempo de actividad supera el límite."
+    }
+}
