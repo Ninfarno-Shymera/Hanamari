@@ -1,41 +1,72 @@
 from src.Act.logic import GestorAcciones
 from src.Stat.logic import GestorDatos
-from src.Per.emotions import MotorEmocional   # Importamos la Calculadora
-from src.Per.mentality import MotorCognitivo  # Importamos el Psicólogo
+from src.Per.emotions import MotorEmocional
+from src.Per.mentality import MotorCognitivo
+
 
 class GestorComportamiento:
-    """La interfaz principal del Cerebro."""
-    
+    """Interfaz principal del cerebro. Coordina Stat, emotions y mentality."""
+
     def __init__(self):
         self.acciones = GestorAcciones()
         self.db = GestorDatos()
-        
         self.emociones = MotorEmocional()
         self.mente = MotorCognitivo()
-        
+
         self.estado_fisico_actual = "STAND"
 
-    def decidir_proxima_accion(self, en_chat=False, accion_forzada=None):
-        var_data = self.db.leer("Var")
-        rasgos = self.db.leer("Basic").get("rasgos", ["neutral"])
+        # Lectura inicial de Basic (solo lectura, nunca se escribe aqui)
+        basic = self.db.read("Basic")
+        self.version = basic.get("version", "0.0")
+        self.modelo = basic.get("modelo_actual", "Mint")
 
-        # 1. ACTUALIZAR EMOCIONES (Si hubo un evento forzado)
-        if accion_forzada:
-            var_data = self.emociones.aplicar_estimulo(accion_forzada, var_data, rasgos)
-            self.estado_fisico_actual = accion_forzada 
-            meta_fisica = accion_forzada
-            
-        # 2. DECISIÓN AUTÓNOMA (Si no hay evento forzado)
+    def next_action(self, en_chat=False, forced=None):
+        """
+        Decide la próxima acción de la mascota.
+        Si forced no es None, aplica ese evento directamente.
+        """
+        estado = self.db.read_status()
+        var = estado["var"]
+        mods = estado["mods"]
+
+        if forced:
+            var = self.emociones.apply(forced, var, mods)
+            self.estado_fisico_actual = forced
+            meta_fisica = forced
         else:
-            # Psicólogo evalúa y decide
-            estado_mental = self.mente.evaluar_estado_emergente(var_data)
-            meta_fisica = self.mente.decidir_meta_fisica(estado_mental)
-            
-            # Pasamos la meta por la máquina de estados físicos de Act
-            self.estado_fisico_actual = self.acciones.obtener_transicion_segura(self.estado_fisico_actual, meta_fisica)
+            # Decaimiento natural en cada ciclo
+            var = self.emociones.decay(var, mods)
 
-        # 3. Guardar cambios y devolver a Wind
-        self.db.guardar("Var", var_data)
-        secuencia = self.acciones.obtener_secuencia("Mint", self.estado_fisico_actual)
-        
-        return {"secuencia": secuencia, "estado": self.estado_fisico_actual, "frase": ""}
+            estado_mental = self.mente.evaluate(var, mods)
+            meta_fisica = self.mente.decide(estado_mental)
+            self.estado_fisico_actual = self.acciones.obtener_transicion_segura(
+                self.estado_fisico_actual, meta_fisica
+            )
+
+        # Guardar Var actualizado
+        self.db.save("Var", var)
+
+        secuencia = self.acciones.obtener_secuencia(
+            self.modelo, self.estado_fisico_actual
+        )
+        return {
+            "secuencia": secuencia,
+            "estado": self.estado_fisico_actual,
+            "frase": "",
+        }
+
+    def save_all(self):
+        """
+        Guarda todo el estado vivo del modelo.
+        Llamado al cerrar la app o por el autoguardado.
+        """
+        self.db.save_all(
+            {
+                "var": self.db.read("Var"),
+                "mods": self.db.read("Mods"),
+                "user": self.db.read("User"),
+                "chat": self.db.read("Chat"),
+                "emotions": self.db.read("Emotions"),
+                "memories": self.db.read("Memories"),
+            }
+        )

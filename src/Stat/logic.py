@@ -5,37 +5,29 @@ import json
 class GestorDatos:
 
     def __init__(self):
-        # Busca la carpeta base sin importar desde dónde ejecutes el código
         self.base_dir = os.path.dirname(
             os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         )
         self.mem_dir = os.path.join(self.base_dir, "res", "Memories")
         os.makedirs(self.mem_dir, exist_ok=True)
 
-        # PLANTILLAS: Reflejan exactamente tu diseño arquitectónico
         self.plantillas = {
-            # Basic: Su core y personalidad inmutable
             "Basic": {
                 "nombre": "Hanamari",
                 "modelo_actual": "",
                 "version": "0.60",
                 "arquetipo": "Serena",
             },
-            # Chat: Registro efímero de las últimas conversaciones
             "Chat": {"Max_Memory": 20, "historial": []},
-            # Emotions: Sus deseos propios, iniciativa y curiosidad
             "Emotions": {
                 "deseo_actual": ["explorar", "conocer"],
                 "objetivos_pendientes": [],
             },
-            # Memories: Cosas que ella o tú deciden guardar para siempre
             "Memories": {
                 "historia_personal": "Fui creada como una compañera virtual, aun no poseo historia.",
                 "recuerdos_clave": [{"fecha": "20/01/25", "evento": "Hoy naci"}],
             },
-            # User: Lo que ella piensa de ti
             "User": {"nombre_usuario": "", "afecto": 10, "rasgos_percibidos": []},
-            # Var: Su sistema de salud, necesidades físicas y espectro emocional completo
             "Var": {
                 "salud": {"fisica": 100, "mental": 100},
                 "necesidades": {
@@ -90,7 +82,7 @@ class GestorDatos:
                     "joy_gain": 1.0,
                     "joy_decay": 1.0,
                     "sadness_gain": 1.0,
-                    "sadness_deccay": 1.0,
+                    "sadness_decay": 1.0,
                     "anger_gain": 1.0,
                     "anger_decay": 1.0,
                     "fear_gain": 1.0,
@@ -123,19 +115,20 @@ class GestorDatos:
             },
         }
 
-    def leer(self, nombre_archivo):
+    # --- LECTURA ---
+
+    def read(self, nombre_archivo):
+        """Lee un archivo JSON de memoria. Si no existe, lo crea desde la plantilla."""
         ruta = os.path.join(self.mem_dir, f"{nombre_archivo}.json")
 
         if not os.path.exists(ruta):
             datos_nuevos = self.plantillas.get(nombre_archivo, {})
-            self.guardar(nombre_archivo, datos_nuevos)
+            self.save(nombre_archivo, datos_nuevos)
             return datos_nuevos
 
         try:
             with open(ruta, "r", encoding="utf-8") as f:
                 datos = json.load(f)
-
-                # Saneamiento: Asegurarnos de que no le falten variables si actualizamos el código
                 plantilla = self.plantillas.get(nombre_archivo, {})
                 for clave, valor in plantilla.items():
                     if clave not in datos:
@@ -143,17 +136,44 @@ class GestorDatos:
                 return datos
         except json.JSONDecodeError:
             print(
-                f"Advertencia: {nombre_archivo}.json estaba corrupto. Restaurando plantilla."
+                f"Advertencia: {nombre_archivo}.json corrupto. Restaurando plantilla."
             )
             return self.plantillas.get(nombre_archivo, {})
 
-    def guardar(self, nombre_archivo, datos):
+    def read_status(self):
+        """Devuelve Var y Mods juntos. Es lo que Per necesita para operar."""
+        return {
+            "var": self.read("Var"),
+            "mods": self.read("Mods"),
+        }
+
+    # --- ESCRITURA ---
+
+    def save(self, nombre_archivo, datos):
+        """Guarda un archivo JSON de memoria."""
         ruta = os.path.join(self.mem_dir, f"{nombre_archivo}.json")
 
-        # Regla especial: El chat no debe crecer al infinito para no arruinar la API
         if nombre_archivo == "Chat" and "historial" in datos:
             if len(datos["historial"]) > 20:
                 datos["historial"] = datos["historial"][-20:]
 
         with open(ruta, "w", encoding="utf-8") as f:
             json.dump(datos, f, indent=4, ensure_ascii=False)
+
+    def save_all(self, estado):
+        """
+        Guarda todo el estado vivo del modelo.
+        Basic es solo lectura, nunca se toca aqui.
+        estado debe ser un dict con las claves: var, mods, user, chat, emotions, memories
+        """
+        mapa = {
+            "Var": "var",
+            "Mods": "mods",
+            "User": "user",
+            "Chat": "chat",
+            "Emotions": "emotions",
+            "Memories": "memories",
+        }
+        for nombre_archivo, clave in mapa.items():
+            if clave in estado:
+                self.save(nombre_archivo, estado[clave])
