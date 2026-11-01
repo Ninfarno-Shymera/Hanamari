@@ -1,0 +1,34 @@
+# Entorno virtual y librerías (se reinstalan con requirements.txt)
+.venv/
+venv/
+
+# Caché de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Datos que genera la app (memoria, notas, registros)
+
+# Claves y secretos (nunca subir)
+.env
+*.env
+# Aun no existen
+resources/keys/ 
+
+# Recursos de prueba
+resources/models/*
+!resources/models/espeon_mint
+resources/models/espeon_mint/sprites/
+
+# Editor y sistema
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+
+# Archivos comprimidos y de empaquetado
+*.zip
+*.rar
+build/
+dist/
+*.spec

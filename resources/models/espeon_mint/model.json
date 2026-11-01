@@ -1,0 +1,209 @@
+{
+    "name": "Espeon Mint, by Cachomon",
+    "credit": "Cachomon",
+    "link": "https://cachomon.com/shimeji.php?g=1&m=0&a=0&t=0&id=369",
+    "size": 128,
+    "look": "left",
+    "physics": {
+        "height": 0.1,
+        "mass": 26.5,
+        "bounce": 0.25,
+        "friction": 0.4,
+        "drag": 1.0,
+        "gravity": 1.0,
+        "rest": 1.0
+    },    
+    "animations": {
+        "STAND": {
+            "bucle": true,
+            "anchor": [92, 128],
+            "frames": [
+                { "img": "shime1.png",  "ms": 2000},
+                { "img": "shime1b.png", "ms": 160},
+                { "img": "shime1c.png", "ms": 160},
+                { "img": "shime1d.png", "ms": 160},
+                { "img": "shime1e.png", "ms": 160},
+                { "img": "shime1.png",  "ms": 2000},
+                { "img": "shime1b.png", "ms": 160},
+                { "img": "shime1c.png", "ms": 160},
+                { "img": "shime1d.png", "ms": 160},
+                { "img": "shime1e.png", "ms": 160},
+                { "img": "shime1a.png", "ms": 240},
+                { "img": "shime1.png",  "ms": 1760},
+                { "img": "shime1b.png", "ms": 160},
+                { "img": "shime1c.png", "ms": 160},
+                { "img": "shime1d.png", "ms": 160},
+                { "img": "shime1e.png", "ms": 160}
+            ]
+        },
+        "WALK": {
+            "bucle": true,
+            "anchor": [64, 128],
+            "velocity": [-50, 0],
+            "frames": [
+                {"img": "shime2b.png", "ms": 240},
+                {"img": "shime2.png",  "ms": 240},
+                {"img": "shime2c.png", "ms": 240},
+                {"img": "shime2.png",  "ms": 240},
+                {"img": "shime2b.png", "ms": 240},
+                {"img": "shime2a.png", "ms": 240},
+                {"img": "shime2c.png", "ms": 240},
+                {"img": "shime2.png",  "ms": 240}
+            ]
+        },
+        "RUN": {
+            "bucle": true,
+            "anchor": [91, 128],
+            "velocity": [-150, 0],
+            "frames": [
+                {"img": "shime3.png",  "ms": 120},
+                {"img": "shime3b.png", "ms": 120},
+                {"img": "shime3c.png", "ms": 120},
+                {"img": "shime3d.png", "ms": 120},
+                {"img": "shime3e.png", "ms": 120},
+                {"img": "shime3f.png", "ms": 120},
+                {"img": "shime3a.png", "ms": 120},
+                {"img": "shime3b.png", "ms": 120},
+                {"img": "shime3c.png", "ms": 120},
+                {"img": "shime3d.png", "ms": 120},
+                {"img": "shime3e.png", "ms": 120},
+                {"img": "shime3f.png", "ms": 120}
+            ]
+        },
+        "DASH": {
+            "bucle": true,
+            "anchor": [64, 128],
+            "velocity": [-200, 0],
+            "frames": [
+                {"img": "dash1.png",  "ms": 160},
+                {"img": "dash2.png",  "ms": 160},
+                {"img": "dash1.png",  "ms": 160},
+                {"img": "dash3.png",  "ms": 160},
+                {"img": "dash1a.png", "ms": 160},
+                {"img": "dash2.png",  "ms": 160},
+                {"img": "dash1.png",  "ms": 160},
+                {"img": "dash3.png",  "ms": 160}
+            ]
+        },
+        "SIT": {
+            "bucle": true,
+            "anchor": [82, 128],
+            "frames": [
+                {"img": "shime11.png",  "ms": 2000},
+                {"img": "shime11b.png", "ms": 160},
+                {"img": "shime11c.png", "ms": 160},
+                {"img": "shime11d.png", "ms": 160},
+                {"img": "shime11e.png", "ms": 160},
+                {"img": "shime11a.png", "ms": 240},
+                {"img": "shime11.png",  "ms": 1760},
+                {"img": "shime11b.png", "ms": 160},
+                {"img": "shime11c.png", "ms": 160},
+                {"img": "shime11d.png", "ms": 160},
+                {"img": "shime11e.png", "ms": 160}
+            ]
+        },
+        "STRETCH": {
+            "bucle": false,
+            "anchor": [75, 128],
+            "frames": [
+                {"img": "stretch1.png", "ms": 400},
+                {"img": "stretch2.png", "ms": 160},
+                {"img": "stretch3.png", "ms": 160},
+                {"img": "stretch4.png", "ms": 160},
+                {"img": "stretch5.png", "ms": 160},
+                {"img": "stretch6.png", "ms": 800},
+                {"img": "stretch5.png", "ms": 160},
+                {"img": "stretch4.png", "ms": 160},
+                {"img": "stretch3.png", "ms": 160},
+                {"img": "stretch2.png", "ms": 160},
+                {"img": "stretch1.png", "ms": 400}
+            ]
+        },
+        "SLEEP": {
+            "bucle": true,
+            "anchor": [86, 128],
+            "frames": [
+                {"img": "shime20.png", "ms": 1000},
+                {"img": "shime21.png", "ms": 600}
+            ]
+        },
+        "FALLING": {
+            "bucle": true,
+            "anchor": [64, 128],
+            "frames": [
+                {"img": "shime4.png",  "ms": 120},
+                {"img": "shime4a.png", "ms": 120}
+            ]
+        },
+        "BOUNCING": {
+            "bucle": false,
+            "anchor": [64, 128],
+            "frames": [
+                {"img": "shime18.png", "ms": 120},
+                {"img": "shime19.png", "ms": 400},
+                {"img": "shime1.png",  "ms": 200}
+            ]
+        },
+        "DRAGGED": {
+            "bucle": true,
+            "anchor": [82, 120],
+            "frames": [
+                {"img": "shimeX.png",  "ms": 4000},
+                {"img": "shimeXa.png", "ms": 240}
+            ]
+        },
+        "GRAB_WALL": {
+            "bucle": true,
+            "anchor": [0, 128],
+            "frames": [
+                {"img": "shime12.png", "ms": 320},
+                {"img": "shime13.png", "ms": 320},
+                {"img": "shime12.png", "ms": 320},
+                {"img": "shime14.png", "ms": 320}
+            ]
+        },
+        "CLIMB_WALL_UP": {
+            "bucle": true,
+            "anchor": [0, 128],
+            "velocity": [0, -150],
+            "frames": [
+                {"img": "shime13.png", "ms": 160},
+                {"img": "shime12.png", "ms": 160},
+                {"img": "shime14.png", "ms": 160},
+                {"img": "shime12.png", "ms": 160}
+            ]
+        },
+        "CLIMB_WALL_DOWN": {
+            "bucle": true,
+            "anchor": [0, 128],
+            "velocity": [0, 150],
+            "frames": [
+                {"img": "shime14.png", "ms": 160},
+                {"img": "shime12.png", "ms": 160},
+                {"img": "shime14.png", "ms": 160},
+                {"img": "shime12.png", "ms": 160}
+            ]
+        },
+        "GRAB_CEILING": {
+            "bucle": true,
+            "anchor": [64, 0],
+            "frames": [
+                {"img": "shime23.png", "ms": 320},
+                {"img": "shime24.png", "ms": 320},
+                {"img": "shime23.png", "ms": 320},
+                {"img": "shime25.png", "ms": 320}
+            ]
+        },
+        "CLIMB_CEILING": {
+            "bucle": true,
+            "anchor": [64, 0],
+            "velocity": [-150, 0],
+            "frames": [
+                {"img": "shime24.png", "ms": 160},
+                {"img": "shime23.png", "ms": 160},
+                {"img": "shime25.png", "ms": 160},
+                {"img": "shime23.png", "ms": 160}
+            ]
+        }
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "initial": "STAND",
+    "behaviors": {
+        "STAND": {
+            "animation": "STAND",
+            "duration": [4, 10],
+            "canTurn": true,
+            "next": {
+                "WALK": 35,
+                "SIT": 25,
+                "STRETCH": 15,
+                "RUN": 10,
+                "STAND": 15
+            }
+        },
+        "WALK": {
+            "animation": "WALK",
+            "requires": ["inFloor"],
+            "canTurn": true,
+            "duration": [3, 8],
+            "next": {"STAND": 60, "WALK": 20, "RUN": 20}
+        },
+        "RUN": {
+            "animation": "RUN",
+            "requires": ["inFloor"],
+            "canTurn": true,
+            "duration": [2, 5],
+            "next": {"STAND": 60, "WALK": 40}
+        },
+        "SIT": {
+            "animation": "SIT",
+            "duration": [6, 15],
+            "next": {"STAND": 50, "SLEEP": 30, "SIT": 20}
+        },
+        "SLEEP": {
+            "animation": "SLEEP",
+            "duration": [10, 30],
+            "next": {"SIT": 100}
+        },
+        "STRETCH": {
+            "animation": "STRETCH",
+            "next": {"STAND": 100}
+        }
+    }
+}
