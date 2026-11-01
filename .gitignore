@@ -19,6 +19,7 @@ resources/keys/
 resources/models/*
 !resources/models/espeon_mint
 resources/models/espeon_mint/sprites/*
+!resources/models/espeon_mint/sprites/.gitkeep
 
 # Editor y sistema
 .vscode/
