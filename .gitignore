@@ -18,7 +18,7 @@ resources/keys/
 # Recursos de prueba
 resources/models/*
 !resources/models/espeon_mint
-resources/models/espeon_mint/sprites/
+resources/models/espeon_mint/sprites/*
 
 # Editor y sistema
 .vscode/
