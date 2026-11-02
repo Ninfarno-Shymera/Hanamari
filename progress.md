@@ -61,7 +61,7 @@ Leyenda de estado: `[ ]` pendiente · `[~]` aplicado, sin probar · `[x]` compro
 - **Hipotesis A:** el 120 es la distancia al punto agarrado, que seria el borde superior (y = 0).
 - **Hipotesis B:** el punto agarrado esta en `alto - 120` (= 41).
 - **Correccion:** nuevo campo `hold` en DRAGGED, separado de `anchor`. Probar `[82, 0]` y `[82, 41]`.
-- **Valor que funciono:** _(anotar tras la prueba)_
+- **Valor que funciono:** _`[82, 0]`_
 
 ### 5. Menores `[X]`
 - `animation.py`: `play` emitia `vel[0]` dos veces; la segunda debe ser `vel[1]`.
