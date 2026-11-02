@@ -3,7 +3,7 @@
 **Version actual: 0.057** (correcciones aplicadas, pendientes de prueba)
 **Rama:** `main` · Respaldo del proyecto anterior: `respaldo-v1`
 **Modelo de prueba:** Espeon Mint shimeji by Cachomon *(temporal)*
-Link: [Shimeji Espeon Alter](https://cachomon.com/shimeji.php?g=1&m=0&a=0&t=0&id=369) · Sprites gratuitos, se descargan desde la pagina (0196 - Espeon Alter [Mint]).
+Link: [Shimeji Espeon Alter](https://cachomon.com/shimeji.php?g=1&m=0&a=0&t=0&id=369) · Shimeji gratuito, se descargan desde la pagina (0196 - Espeon Alter [Mint]).
 
 Leyenda de estado: `[ ]` pendiente · `[~]` aplicado, sin probar · `[x]` comprobado
 
