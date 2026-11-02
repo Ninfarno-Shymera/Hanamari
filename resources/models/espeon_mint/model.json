@@ -5,7 +5,7 @@
     "size": 128,
     "look": "left",
     "physics": {
-        "height": 0.1,
+        "height": 1.2,
         "mass": 26.5,
         "bounce": 0.25,
         "friction": 0.4,
@@ -141,12 +141,13 @@
             "frames": [
                 {"img": "shime18.png", "ms": 120},
                 {"img": "shime19.png", "ms": 400},
-                {"img": "shime1.png",  "ms": 200}
+                {"img": "shime1.png", "ms": 200, "anchor": [92, 128]}
             ]
         },
         "DRAGGED": {
             "bucle": true,
             "anchor": [82, 120],
+            "hold": [82, 0], 
             "frames": [
                 {"img": "shimeX.png",  "ms": 4000},
                 {"img": "shimeXa.png", "ms": 240}

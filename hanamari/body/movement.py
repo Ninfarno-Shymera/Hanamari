@@ -13,10 +13,10 @@ class Physic:
         self.bounce = data.get("bounce", 0.3)
         self.friction = data.get("friction", 0.4)
         pxByMeter = size / data.get("height", 0.3)
-        self.gravity = G * pxByMeter * data.get("gravity", 0.1)
+        self.gravity = G * pxByMeter * data.get("gravity", 1.0)
         self.rest = data.get("rest", 1.0) * pxByMeter 
         self.kAir = data.get("drag", 0.5) / self.mass
-        self.throw = min(1.0, 2.0 / self.mass)
+        self.throw = data.get("throw", max(0.4, min(1.0, (2.0 / self.mass) ** 0.5)))
         self.height = size
 
 class Movement(QObject):
@@ -97,7 +97,7 @@ class Movement(QObject):
         vx, vy = self._throwVelocity()
         self.avx, self.avy = vx * f.throw, vy * f.throw
 
-        if self.y >= self.screen.floor() - 1 and abs(self.avy) < f.threshold:
+        if self.y >= self.screen.floor() - 1 and abs(self.avy) < f.rest:
             self._land()
             return
         

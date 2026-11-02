@@ -20,14 +20,15 @@ class Sprite(QWidget):
         self.image = None
         self.anchor = QPoint(0, 0)
         self.anchorPos = QPoint(400, 500)
-        self.offset = QPoint()
+        self.hold = QPoint()
         self._dragged = False
 
     # Recive fotograms
 
-    def showFotogram(self, image, anchor):
+    def showFotogram(self, image, anchor, hold):
         self.image = image
         self.anchor = anchor
+        self.hold = hold
         size = image.deviceIndependentSize().toSize()
         corner = self.anchorPos - anchor
         self.setGeometry(corner.x(), corner.y(), size.width(), size.height())
@@ -60,14 +61,16 @@ class Sprite(QWidget):
 
         if e.button() == Qt.MouseButton.LeftButton:
             self._dragged = True
-            self.offset = e.globalPosition().toPoint() - self.anchorPos
             self.startDragged.emit()
+            self.anchorPos = e.globalPosition().toPoint() + (self.anchor - self.hold)
+            self.move(self.anchorPos - self.anchor)
+            self.moveDragged.emit(self.anchorPos)
         elif e.button() == Qt.MouseButton.RightButton:
             QApplication.quit() # Provisional
 
     def mouseMoveEvent(self, e):
         if self._dragged and e.buttons() & Qt.MouseButton.LeftButton:
-            self.anchorPos = e.globalPosition().toPoint() - self.offset
+            self.anchorPos = e.globalPosition().toPoint() + (self.anchor - self.hold)
             self.move(self.anchorPos - self.anchor)
             self.moveDragged.emit(self.anchorPos)
 

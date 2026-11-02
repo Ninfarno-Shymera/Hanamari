@@ -5,7 +5,7 @@ from PyQt6.QtGui import QImage
 
 class Animator(QObject):
     """It plays back sequences of frames without knowing which sprites make up the animations."""
-    changedFrame = pyqtSignal(QImage, QPoint)
+    changedFrame = pyqtSignal(QImage, QPoint, QPoint)
     endlessFrame = pyqtSignal(str)
     changedVelocity = pyqtSignal(float, float)
 
@@ -25,6 +25,7 @@ class Animator(QObject):
         self._name = None
         self._frames = []
         self._anchor = None
+        self._hold = None
         self._bucle = True
         self._index = 0
 
@@ -60,10 +61,11 @@ class Animator(QObject):
         self._name = name
         self._frames = data["frames"]
         self._anchor = data.get("anchor")
+        self._hold = data.get("hold")
         self._bucle = data.get("bucle", True)
         self._index = 0
         vel = data.get("velocity", [0, 0])
-        self.changedVelocity.emit(float(vel[0]), float(vel[0]))
+        self.changedVelocity.emit(float(vel[0]), float(vel[1]))
         self._issue()
         self._timer.start(self._frames[0]["ms"])
 
@@ -99,20 +101,20 @@ class Animator(QObject):
             self._ready[cipher] = image
         return self._ready[cipher]
 
-    def _calculateAnchor(self, original):
-        if self._anchor is None:
-            ax, ay = original.width() / 2, original.height()
-        else:
-            ax, ay = self._anchor
+    def _point(self, original, p):
+        x, y = p
         if self._right:
-            ax = original.width() - ax
-        return QPoint(round(ax * self._scale), round(ay * self._scale))
+            x = original.width() - x
+        return QPoint(round(x * self._scale), round(y * self._scale))
     
     def _issue(self):
-        archive = self._frames[self._index]["img"]
-        image = self._image(archive)
-        anchor = self._calculateAnchor(self._original(archive))
-        self.changedFrame.emit(image, anchor)
+        frame = self._frames[self._index]
+        original = self._original(frame["img"])
+        image = self._image(frame["img"])
+        ref = frame.get("anchor") or self._anchor or (original.width() / 2, original.height())
+        anchor = self._point(original, ref)
+        hold = self._point(original, self._hold) if self._hold else anchor
+        self.changedFrame.emit(image, anchor, hold)
 
     def _next(self):
         self._index += 1

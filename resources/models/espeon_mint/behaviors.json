@@ -1,5 +1,5 @@
 {
-    "initial": "STAND",
+    "initial": "WALK",
     "behaviors": {
         "STAND": {
             "animation": "STAND",
@@ -34,12 +34,12 @@
         },
         "SLEEP": {
             "animation": "SLEEP",
-            "duration": [10, 30],
-            "next": {"SIT": 100}
+            "duration": [30, 90],
+            "next": {"STRETCH": 100}
         },
         "STRETCH": {
             "animation": "STRETCH",
-            "next": {"STAND": 100}
+            "next": {"STAND": 60, "SLEEP": 40}
         }
     }
 }
